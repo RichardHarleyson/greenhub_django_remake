@@ -2,9 +2,15 @@
 <html lang="en" dir="ltr">
 	<head>
 		<meta charset="utf-8">
-		<title>Base title</title>
+		<title>
+			{% block title %}
+				Base title
+			{% endblock %}
+		</title>
 	</head>
 	<body>
+		{% block content %}
 		<h1>Base header here</h1>
+		{% endblock %}
 	</body>
 </html>
