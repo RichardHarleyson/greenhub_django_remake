@@ -42,7 +42,6 @@
 			'https://connect.facebook.net/en_US/fbevents.js');
 				fbq('init', '224157245177257');
 				fbq('track', 'PageView');
-				fbq('track', 'ViewContent');
 			</script>
 			<noscript>
 			<img height="1" width="1"
@@ -95,16 +94,16 @@
 	                        <a class="nav-link font-size-18 g-color--white" href="https://greenhub.pro">Главная</a>
 	                    </li>
 	                    <li class="nav-item">
-	                        <a class="nav-link font-size-18 g-color--white" href="https://greenhub.pro/vehicles">Электромобили</a>
+	                        <a class="nav-link font-size-18 g-color--white" href="/vehicles">Электромобили</a>
 	                    </li>
 	                    <li class="nav-item">
-	                        <a class="nav-link font-size-18 g-color--white" href="https://greenhub.pro/motors">Электромопеды</a>
+	                        <a class="nav-link font-size-18 g-color--white" href="/motors">Электромопеды</a>
 	                    </li>
 	                    <li class="nav-item">
-	                        <a class="nav-link font-size-18 g-color--white" href="https://greenhub.pro/charger_map">Карта зарядок</a>
+	                        <a class="nav-link font-size-18 g-color--white" href="/charger_map">Карта зарядок</a>
 	                    </li>
 	                    <li class="nav-item">
-	                        <a class="nav-link font-size-18 g-color--white" href="https://greenhub.pro/contacts">Контакты</a>
+	                        <a class="nav-link font-size-18 g-color--white" href="/contacts">Контакты</a>
 	                    </li>
 	                </ul>
 	            </div>
@@ -139,16 +138,16 @@
 	                            <a class="nav-link g-font-size-20--lg" href="https://greenhub.pro/">Главная</a>
 	                        </li>
 	                        <li class="nav-item active">
-	                            <a class="nav-link g-font-size-20--lg" href="https://greenhub.pro/vehicles">Электромобили</a>
+	                            <a class="nav-link g-font-size-20--lg" href="/vehicles">Электромобили</a>
 	                        </li>
 	                        <li class="nav-item active">
-	                            <a class="nav-link g-font-size-20--lg" href="https://greenhub.pro/motors">Электромопеды</a>
+	                            <a class="nav-link g-font-size-20--lg" href="/motors">Электромопеды</a>
 	                        </li>
 	                        <li class="nav-item active">
-	                            <a class="nav-link  g-font-size-20--lg" href="https://greenhub.pro/charger_map">Карта зарядок</a>
+	                            <a class="nav-link g-font-size-20--lg" href="/charger_map">Карта зарядок</a>
 	                        </li>
 	                        <li class="nav-item active">
-	                            <a class="nav-link g-font-size-20--lg" href="https://greenhub.pro/contacts">Контакты</a>
+	                            <a class="nav-link g-font-size-20--lg" href="/contacts">Контакты</a>
 	                        </li>
 	                    </ul>
 	                </div>
@@ -173,7 +172,7 @@
 	                        <div class="form-group-lg">
 	                            <input class="form-control form-control-lg form-custom-inputs" id="ftd1_n" type="text" name="name" placeholder="Имя" maxlength="30">
 	                            <input class="form-control form-control-lg form-custom-inputs" id="ftd1_p" type="tel" name="phone" placeholder="Телефон*" maxlength="12">
-	                            <button onClick="fbq_onClick" type="submit" id="test_drive_submit" class="btn btn-lg btn-outline-success btn-success">Записаться</button>
+	                            <button onclick="fbq_onClick()" type="submit" id="test_drive_submit" class="btn btn-lg btn-outline-success btn-success">Записаться</button>
 	                            <div class="h3 text-center modal-texts hidden" id="tdfa" >Отлично! Сейчас перезвоним</div>
 	                        </div>
 	                    </form>
@@ -196,7 +195,7 @@
 	                        <div class="form-group-lg">
 	                            <input class="form-control form-control-lg form-custom-inputs" id="cm_n" type="text" name="name" placeholder="Имя" maxlength="30">
 	                            <input class="form-control form-control-lg form-custom-inputs" id="cm_p" type="tel" name="phone" placeholder="Телефон*" maxlength="12">
-	                            <button onClick="fbq_onClick" type="submit" id="call-me-submit" class="btn btn-lg btn-outline-success btn-success">Свяжитесь со мной</button>
+	                            <button onclick="fbq_onClick()" type="submit" id="call-me-submit" class="btn btn-lg btn-outline-success btn-success">Свяжитесь со мной</button>
 	                            <div class="h3 text-center modal-texts hidden" id="cma" >Отлично! Сейчас перезвоним</div>
 	                        </div>
 	                    </form>
