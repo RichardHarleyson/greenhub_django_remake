@@ -2,4 +2,4 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def index(request):
-	return HttpResponse('Electrocars here')
+	return render(request, 'electrocars/base_electrocars.html')
