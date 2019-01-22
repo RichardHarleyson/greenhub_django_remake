@@ -20,5 +20,7 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
 	path('', views.index, name='index'),
-	path('contacts/', include('contacts.urls'))
+	path('contacts/', include('greenhub_remake.apps.contacts.urls')),
+	path('electrocars/', include('greenhub_remake.apps.electrocars.urls')),
+	path('charger_map/', include('greenhub_remake.apps.charger_map.urls')),
 ]
