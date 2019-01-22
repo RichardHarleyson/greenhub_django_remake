@@ -12,7 +12,6 @@
     <meta name="description" content="Базовый description">
 		{% endblock %}
     <link rel="shortcut icon" href="{% static "img/favicon.ico" %}" type="image/x-icon">
-		<!-- <link rel="shortcut icon" href="greenhub_remake/src/static/img/favicon.ico" type="image/x-icon"> -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -28,27 +27,33 @@
     <link rel="preconnect" href="https://fonts.googleapis.com/css?family=Ubuntu">
 
     <!--Custom CSS & JS-->
-    <link rel="stylesheet" href="css/style.css" type="text/css"/>
-    <link rel="stylesheet" href="css/preloader.css" type="text/css"/>
+    <link rel="stylesheet" href="{% static "css/style.css"%}" type="text/css"/>
+    <link rel="stylesheet" href="{% static "css/preloader.css"%}" type="text/css"/>
 
 		<!-- Facebook Pixel Code -->
 		<script>
-		!function(f,b,e,v,n,t,s)
-		{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-		n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-		if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-		n.queue=[];t=b.createElement(e);t.async=!0;
-		t.src=v;s=b.getElementsByTagName(e)[0];
-		s.parentNode.insertBefore(t,s)}(window,document,'script',
-		'https://connect.facebook.net/en_US/fbevents.js');
-		fbq('init', '224157245177257');
-		fbq('track', 'PageView');
-		</script>
-		<noscript>
-		<img height="1" width="1"
-		src="https://www.facebook.com/tr?id=224157245177257&ev=PageView
-		&noscript=1"/>
+			!function(f,b,e,v,n,t,s)
+			{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+			n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+			if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+			n.queue=[];t=b.createElement(e);t.async=!0;
+			t.src=v;s=b.getElementsByTagName(e)[0];
+			s.parentNode.insertBefore(t,s)}(window,document,'script',
+			'https://connect.facebook.net/en_US/fbevents.js');
+				fbq('init', '224157245177257');
+				fbq('track', 'PageView');
+				fbq('track', 'ViewContent');
+			</script>
+			<noscript>
+			<img height="1" width="1"
+			src="https://www.facebook.com/tr?id=224157245177257&ev=PageView
+			&noscript=1"/>
 		</noscript>
+		<script>
+			function fbq_onClick() {
+			fbq('track', 'SubmitApplication');
+			};
+		</script>
 
 </head>
 <body>
@@ -81,7 +86,7 @@
 	        <div class="navbar navbar-expand navbar-dark bg-dark special-font">
 						<!-- Лого -->
 	            <a class="navbar-brand" href="https://greenhub.pro/">
-	                <img src="data/img/new_logosmall.jpg" alt="logo_here">
+	                <img src="{% static "img/new_logosmall.jpg"%}" alt="logo_here">
 	            </a>
 							<!-- Кнопки меню -->
 	            <div class="collapse navbar-collapse">
@@ -112,7 +117,7 @@
 							<!-- Телефоны -->
 	            <span class="g-color--white font-size-18 margin-right-20">+38 (073) 039-4449 <br> +38 (067) 561-1161</span>
 	            <a>
-	                <button class="btn btn-lg btn-outline-success g-bg-color-white margin-right-20" data-toggle="modal" data-target="#testdrivemodal">Запись на тест-драйв</button>
+	                <button onClick="fbq_onClick" class="btn btn-lg btn-outline-success g-bg-color-white margin-right-20" data-toggle="modal" data-target="#testdrivemodal">Запись на тест-драйв</button>
 	            </a>
 	        </div>
 	    </div>
@@ -123,7 +128,7 @@
 								<!-- Лого -->
 	                <div class="navbar-header">
 	                    <div class="text-center">
-	                        <a class="navbar-brand" href="https://greenhub.pro"><img src="data/img/new_logosmall.jpg" alt="logo_here"></a>
+	                        <a class="navbar-brand" href="https://greenhub.pro"><img src="{% static "img/new_logosmall.jpg"%}" alt="logo_here"></a>
 	                        <a class="collapsed fas fa-bars font-size-30 g-color--white" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"></a>
 	                    </div>
 	                </div>
@@ -168,7 +173,7 @@
 	                        <div class="form-group-lg">
 	                            <input class="form-control form-control-lg form-custom-inputs" id="ftd1_n" type="text" name="name" placeholder="Имя" maxlength="30">
 	                            <input class="form-control form-control-lg form-custom-inputs" id="ftd1_p" type="tel" name="phone" placeholder="Телефон*" maxlength="12">
-	                            <button type="submit" id="test_drive_submit" class="btn btn-lg btn-outline-success btn-success">Записаться</button>
+	                            <button onClick="fbq_onClick" type="submit" id="test_drive_submit" class="btn btn-lg btn-outline-success btn-success">Записаться</button>
 	                            <div class="h3 text-center modal-texts hidden" id="tdfa" >Отлично! Сейчас перезвоним</div>
 	                        </div>
 	                    </form>
@@ -191,7 +196,7 @@
 	                        <div class="form-group-lg">
 	                            <input class="form-control form-control-lg form-custom-inputs" id="cm_n" type="text" name="name" placeholder="Имя" maxlength="30">
 	                            <input class="form-control form-control-lg form-custom-inputs" id="cm_p" type="tel" name="phone" placeholder="Телефон*" maxlength="12">
-	                            <button type="submit" id="call-me-submit" class="btn btn-lg btn-outline-success btn-success">Свяжитесь со мной</button>
+	                            <button onClick="fbq_onClick" type="submit" id="call-me-submit" class="btn btn-lg btn-outline-success btn-success">Свяжитесь со мной</button>
 	                            <div class="h3 text-center modal-texts hidden" id="cma" >Отлично! Сейчас перезвоним</div>
 	                        </div>
 	                    </form>
@@ -216,7 +221,7 @@
 				<div class="row text-center">
 						<div class="col-md-4"></div>
 						<div class="col-md-4">
-								<img class="align-middle" src="data/img/new_logosmall.jpg" alt="logo_here" style="margin-top: 40px">
+								<img class="align-middle" src="{% static "img/new_logosmall.jpg"%}" alt="logo_here" style="margin-top: 40px">
 						</div>
 						<div class="col-md-4"></div>
 				</div>
@@ -225,11 +230,11 @@
 	</div>
 	<!--Bootstrap & JQuery-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous"><script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	<script src="https://greenhub.pro/js/jquery-3.3.1.min.js"></script>
+	<script src="{% static "js/jquery-3.3.1.min.js"%}"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="https://greenhub.pro/css/fonts.css" type="text/css"/>
-	<script src="https://greenhub.pro/js/global.js"></script>
-	<script src="https://greenhub.pro/js/preloader.js"></script>
+	<link rel="stylesheet" href="{% static "css/fonts.css"%}" type="text/css"/>
+	<script src="{% static "js/global.js"%}"></script>
+	<script src="{% static "js/preloader.js"%}"></script>
 
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
