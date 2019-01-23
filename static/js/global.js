@@ -2,6 +2,23 @@
  * Created by Валентин on 29.05.2018.
  */
 
+// Тесты новой аякс формы
+$(document).ready(function(){
+	$("#form1").submit(function(){
+		var form_data = $(this).serialize();
+		$.ajax({
+			url: $('#form1').attr('action'),
+			type: "POST",
+			data: form_data,
+			success: function(data) {
+				$('form[id=form1]').trigger('reset');
+				alert(data);
+			}
+		});
+		return false
+	});
+});
+
 // Модальное окно записи на тест драйв
 $(document).ready(function(){
     $("#f1_test_drive").submit(function() { //устанавливаем событие отправки для формы с id=form
