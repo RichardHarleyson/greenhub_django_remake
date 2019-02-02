@@ -4,15 +4,19 @@
 
 // Тесты новой аякс формы
 $(document).ready(function(){
-	$("#form1").submit(function(){
+	$("#f1_test_drive").submit(function(){
 		var form_data = $(this).serialize();
+		console.log(form_data);
 		$.ajax({
-			url: $('#form1').attr('action'),
-			type: "POST",
+			url: $('#f1_test_drive').attr('action'),
+			type: "GET",
 			data: form_data,
 			success: function(data) {
-				$('form[id=form1]').trigger('reset');
-				alert(data);
+				$('form[id=f1_test_drive]').trigger('reset');
+				// alert(data);
+			},
+			error: function(){
+				alert('Failed');
 			}
 		});
 		return false
@@ -24,7 +28,7 @@ $(document).ready(function(){
     $("#f1_test_drive").submit(function() { //устанавливаем событие отправки для формы с id=form
         var form_data = $(this).serialize(); //собераем все данные из формы
         $.ajax({
-            url: "https://greenhub.pro/php/testdriveform.php", //путь до php фаила отправителя
+            // url: "https://greenhub.pro/php/testdriveform.php", //путь до php фаила отправителя
             type: "POST", //Метод отправки
             data: form_data,
             success: function() {

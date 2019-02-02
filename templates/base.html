@@ -168,7 +168,8 @@
 	                    </button>
 	                </div>
 	                <div class="container" >
-	                    <form class="form" id="f1_test_drive">
+	                    <form class="form" id="f1_test_drive" action="testapp_method">
+												{% csrf_token %}
 	                        <div class="form-group-lg">
 	                            <input class="form-control form-control-lg form-custom-inputs" id="ftd1_n" type="text" name="name" placeholder="Имя" maxlength="30">
 	                            <input class="form-control form-control-lg form-custom-inputs" id="ftd1_p" type="tel" name="phone" placeholder="Телефон*" maxlength="12">
@@ -192,6 +193,7 @@
 	                </div>
 	                <div class="container" >
 	                    <form class="form" id="call-me-form">
+												{% csrf_token %}
 	                        <div class="form-group-lg">
 	                            <input class="form-control form-control-lg form-custom-inputs" id="cm_n" type="text" name="name" placeholder="Имя" maxlength="30">
 	                            <input class="form-control form-control-lg form-custom-inputs" id="cm_p" type="tel" name="phone" placeholder="Телефон*" maxlength="12">
