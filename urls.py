@@ -16,14 +16,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from . import views
+import greenhub_remake.apps.clients.views as clients_views
+import greenhub_remake.apps.core.views as core_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-	# path('', views.index, name='index'),
-	path('', include('greenhub_remake.apps.core.urls')),
-	path('contacts/', include('greenhub_remake.apps.contacts.urls')),
+
+	path('', views.index, name='index'),
+	# path('', include('greenhub_remake.apps.core.urls')),
+	path('contacts/', views.contacts, name='contacts'),
+	path('charger_map/', views.charger_map, name='charger_map'),
+
 	path('electrocars/', include('greenhub_remake.apps.electrocars.urls')),
-	path('charger_map/', include('greenhub_remake.apps.charger_map.urls')),
 	path('electromoto/', include('greenhub_remake.apps.electromoto.urls')),
 	path('testapp/', include('greenhub_remake.apps.testapp.urls')),
+	path('testdrive_form', clients_views.testdrive_form, name='testdrive_form'),
+	path('callme_form', clients_views.callme_form, name='callme_form'),
 ]

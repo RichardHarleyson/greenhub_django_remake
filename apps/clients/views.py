@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from djan.core.mail import send_mail
+from django.core.mail import send_mail
 
 
 def testdrive_form(request):
