@@ -19,11 +19,11 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-	path('', views.index, name='index'),
+	# path('', views.index, name='index'),
+	path('', include('greenhub_remake.apps.core.urls')),
 	path('contacts/', include('greenhub_remake.apps.contacts.urls')),
 	path('electrocars/', include('greenhub_remake.apps.electrocars.urls')),
 	path('charger_map/', include('greenhub_remake.apps.charger_map.urls')),
 	path('electromoto/', include('greenhub_remake.apps.electromoto.urls')),
 	path('testapp/', include('greenhub_remake.apps.testapp.urls')),
-
 ]
