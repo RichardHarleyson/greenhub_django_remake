@@ -17,7 +17,6 @@ from django.contrib import admin
 from django.urls import path, include
 from . import views
 import greenhub_remake.apps.clients.views as clients_views
-import greenhub_remake.apps.core.views as core_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
