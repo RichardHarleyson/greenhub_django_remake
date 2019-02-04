@@ -25,4 +25,5 @@ urlpatterns = [
 	path('charger_map/', include('greenhub_remake.apps.charger_map.urls')),
 	path('electromoto/', include('greenhub_remake.apps.electromoto.urls')),
 	path('testapp/', include('greenhub_remake.apps.testapp.urls')),
+
 ]

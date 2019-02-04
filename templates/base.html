@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="{% static "css/preloader.css"%}" type="text/css"/>
 
 		<!-- Facebook Pixel Code -->
-		<script>
+		<!-- <script>
 			!function(f,b,e,v,n,t,s)
 			{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 			n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -52,7 +52,7 @@
 			function fbq_onClick() {
 			fbq('track', 'SubmitApplication');
 			};
-		</script>
+		</script> -->
 
 </head>
 <body>
@@ -116,7 +116,7 @@
 							<!-- Телефоны -->
 	            <span class="g-color--white font-size-18 margin-right-20">+38 (073) 039-4449 <br> +38 (067) 561-1161</span>
 	            <a>
-	                <button onClick="fbq_onClick" class="btn btn-lg btn-outline-success g-bg-color-white margin-right-20" data-toggle="modal" data-target="#testdrivemodal">Запись на тест-драйв</button>
+	                <button class="btn btn-lg btn-outline-success g-bg-color-white margin-right-20" data-toggle="modal" data-target="#testdrivemodal">Запись на тест-драйв</button>
 	            </a>
 	        </div>
 	    </div>
@@ -168,13 +168,14 @@
 	                    </button>
 	                </div>
 	                <div class="container" >
-	                    <form class="form" id="f1_test_drive" action="testapp_method">
+	                    <form class="form" id="f1_test_drive" action="{% url 'testdrive_form' %}">
 												{% csrf_token %}
 	                        <div class="form-group-lg">
 	                            <input class="form-control form-control-lg form-custom-inputs" id="ftd1_n" type="text" name="name" placeholder="Имя" maxlength="30">
 	                            <input class="form-control form-control-lg form-custom-inputs" id="ftd1_p" type="tel" name="phone" placeholder="Телефон*" maxlength="12">
-	                            <button onclick="fbq_onClick()" type="submit" id="test_drive_submit" class="btn btn-lg btn-outline-success btn-success">Записаться</button>
-	                            <div class="h3 text-center modal-texts hidden" id="tdfa" >Отлично! Сейчас перезвоним</div>
+	                            <!-- <button onclick="fbq_onClick()" type="submit" id="test_drive_submit" class="btn btn-lg btn-outline-success btn-success">Записаться</button> -->
+															<button type="submit" id="test_drive_submit" class="btn btn-lg btn-outline-success btn-success">Записаться</button>
+															<div class="h3 text-center modal-texts hidden" id="tdfa" >Отлично! Сейчас перезвоним</div>
 	                        </div>
 	                    </form>
 	                </div>
@@ -192,13 +193,14 @@
 	                    </button>
 	                </div>
 	                <div class="container" >
-	                    <form class="form" id="call-me-form">
+	                    <form class="form" id="call-me-form" action="{% url 'callme_form' %}">
 												{% csrf_token %}
 	                        <div class="form-group-lg">
 	                            <input class="form-control form-control-lg form-custom-inputs" id="cm_n" type="text" name="name" placeholder="Имя" maxlength="30">
 	                            <input class="form-control form-control-lg form-custom-inputs" id="cm_p" type="tel" name="phone" placeholder="Телефон*" maxlength="12">
-	                            <button onclick="fbq_onClick()" type="submit" id="call-me-submit" class="btn btn-lg btn-outline-success btn-success">Свяжитесь со мной</button>
-	                            <div class="h3 text-center modal-texts hidden" id="cma" >Отлично! Сейчас перезвоним</div>
+	                            <!-- <button onclick="fbq_onClick()" type="submit" id="call-me-submit" class="btn btn-lg btn-outline-success btn-success">Свяжитесь со мной</button> -->
+															<button type="submit" id="call-me-submit" class="btn btn-lg btn-outline-success btn-success">Свяжитесь со мной</button>
+															<div class="h3 text-center modal-texts hidden" id="cma" >Отлично! Сейчас перезвоним</div>
 	                        </div>
 	                    </form>
 	                </div>

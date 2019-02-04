@@ -16,4 +16,4 @@ def testapp_method(request):
 	['richard.harleyson@gmail.com'],
 	fail_silently=False,
 	)
-	return HttpResponse(idata)
+	return HttpResponse(True)
