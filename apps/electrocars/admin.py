@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import Vehicle
 
 class MainAmdmin(admin.ModelAdmin):
-	list_display(
+	list_display = (
 		'veh_title',
 		'veh_comp',
 		'veh_vin',
@@ -11,7 +11,7 @@ class MainAmdmin(admin.ModelAdmin):
 		'veh_price',
 		'veh_type',
 		'veh_status',
-		'add_date'
+		'add_date',
 		)
 
-admin.site.register(Vehicle, MainAdmin)
+admin.site.register(Vehicle, MainAmdmin)
