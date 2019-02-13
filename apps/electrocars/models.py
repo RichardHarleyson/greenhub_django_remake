@@ -18,7 +18,7 @@ class Vehicle(models.Model):
 	veh_status = models.PositiveSmallIntegerField(default=0)
 	add_date = models.DateTimeField(auto_now_add=True)
 
-	def __str__(self):
+	def full_name(self):
 		return '{} {} {}'.format(self.veh_title, self.veh_comp, self.veh_year)
 
 class Vehicle_photos(models.Model):
